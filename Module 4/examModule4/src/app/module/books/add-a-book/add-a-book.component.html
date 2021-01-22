@@ -1,0 +1,13 @@
+<form [formGroup]="bookForm" (ngSubmit)="submitForm()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputName">Name</label>
+      <input formControlName="name" type="text" class="form-control" id="inputName" placeholder="Name">
+    </div>
+  <nz-form-control [nzSpan]="8" [nzOffset]="4">
+    <button nz-button nzType="primary" type="submit">Register</button>
+    <button (click)="back()" type="button" nz-button nzType="primary">Back</button>
+  </nz-form-control>
+
+</div>
+</form>

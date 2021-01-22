@@ -1,0 +1,21 @@
+<button class="add" nz-button nzType="primary" nzDanger type="button" routerLink="./create">Add+</button>
+<nz-table [nzData]="awesomes">
+  <thead>
+    <tr>
+      <th>Tag</th>
+      <th>URL</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let awesome of awesomes; index as idx" >
+      <td>{{awesome.tag}}</td>
+      <td>{{awesome.url}}</td>
+      <td>{{awesome.description}}</td>
+      <td>
+        <button nz-button nzType="primary" nzDanger type="button" [routerLink]="[awesome.id]">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

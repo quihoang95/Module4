@@ -1,0 +1,15 @@
+<main>
+  <header class="container">
+    <app-header [numberItems]="4"></app-header>
+  </header>
+
+  <section class="container">
+    <app-product-list [products]="cartItems" (click)="removeProduct()"></app-product-list>
+  </section>
+
+  <section class="container">
+    <app-product-code></app-product-code>
+
+    <app-cart-summnary [subTotal]="subTotal" [tax]="tax" [total]="total"></app-cart-summnary>
+  </section>
+</main>

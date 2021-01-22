@@ -1,0 +1,49 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "book1",
+      "read": true
+    },
+    {
+      "id": 2,
+      "name": "book2",
+      "read": false
+    },
+    {
+      "id": 3,
+      "name": "book3",
+      "read": true
+    },
+    {
+      "name": "book4",
+      "id": 4,
+      "read": false
+    },
+    {
+      "name": "book6",
+      "read": true,
+      "id": 6
+    },
+    {
+      "name": "book7",
+      "read": false,
+      "id": 7
+    },
+    {
+      "name": "book5",
+      "read": true,
+      "id": 8
+    },
+    {
+      "name": "book8",
+      "read": false,
+      "id": 9
+    },
+    {
+      "name": null,
+      "read": true,
+      "id": 10
+    }
+  ]
+}

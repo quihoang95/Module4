@@ -1,0 +1,23 @@
+<div class="container">
+  <h5><a routerLink="">Về Trang Chủ</a></h5>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Danh sách đọc</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <div class="d-flex justify-content-between">
+          <td>{{book.name}}</td>
+          <td>
+            <button (click)="read(book.id)" class="btn btn-info">Chưa đọc</button>
+            <button (click)="deleteBookData(book.id)" class="btn btn-danger">Xóa</button>
+          </td>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+  <h5><a routerLink="/listread">Danh sách đã đọc</a> </h5>
+
+</div>

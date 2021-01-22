@@ -1,0 +1,35 @@
+<div class="container">
+  <h5><a routerLink="">Về Trang Chủ</a></h5>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Danh sách đọc</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <div class="d-flex justify-content-between">
+          <td>{{book.name}}</td>
+          <td>
+            <button (click)="unread(book.id)" class="btn btn-warning">Đọc lại</button>
+            <button (click)="deleteBookData(book.id)" class="btn btn-danger">Xóa</button>
+          </td>
+        </div>
+      </tr>
+      <tr>
+      <td>
+        <form (ngSubmit)="insertBookData()" class="d-flex" name="form" [formGroup]="form">
+         <input type="text" name="name" class="form-control" [(ngModel)]="book.name"
+          formControlName="name" [ngClass]="{'is-invalid':form.get('name').touched && form.get('name').invalid}">
+          <div class="invalid-feedback">
+            <div>Name is requied</div>
+          </div>
+          <button class="btn btn-primary" style="margin-left: 20px;" [disabled]='!form.valid'>Thêm</button>
+        </form>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+  <h5><a routerLink="/listunread">Danh sách</a> </h5>
+
+</div>

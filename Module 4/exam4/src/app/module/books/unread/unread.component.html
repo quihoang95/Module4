@@ -1,0 +1,40 @@
+<nz-input-group style="width:500px; margin-left: 5px">
+  <label for="">Search: </label>
+  <input type="text" [(ngModel)]="searchValue" nz-input placeholder="input search text" />
+</nz-input-group>
+<nz-table [nzData]="bookList">
+  <thead>
+    <tr>
+      <th colspan="4">Danh sách đọc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of bookList |searchfilter:searchValue; index as idx" >
+      <td>{{idx + 1}}</td>
+      <td>{{book.name}}</td>
+      <td>
+        <button (click)="readBook(book.id)"  nz-button nzType="primary" nzDanger type="button">Đọc</button>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td colspan="2">
+        <label for="booksName">Thêm sách:</label>
+        <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-input-group nzPrefixIcon="user">
+                <input style="width: 500px" formControlName="name" nz-input  />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control>
+              <button nz-button nzType="primary">Thêm</button>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

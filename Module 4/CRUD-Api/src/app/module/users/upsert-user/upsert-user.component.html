@@ -1,0 +1,25 @@
+<form [formGroup]="userForm" (ngSubmit)="submitForm()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputName">Name</label>
+      <input formControlName="name" type="text" class="form-control" id="inputName" placeholder="Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="username">Username</label>
+      <input formControlName="username" type="text" class="form-control" id="username" placeholder="Username">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputEmail">Email</label>
+    <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputPhone">Phone</label>
+    <input formControlName="phone" type="text" class="form-control" id="inputPhone" placeholder="Phone">
+  </div>
+
+  <nz-form-control [nzSpan]="8" [nzOffset]="4">
+    <button nz-button nzType="primary">{{ isEdit ? 'Update' : 'Register'}}</button>
+    <button (click)="back()" type="button" nz-button nzType="primary">Back</button>
+  </nz-form-control>
+</form>

@@ -1,0 +1,21 @@
+<button (click)="back()" nz-button nzType="primary">Về trang chủ</button>
+<nz-table [nzData]="books">
+  <thead>
+    <tr>
+      <th colspan="4">Danh sách đọc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books; index as idx" >
+      <td>{{idx + 1}}</td>
+      <td>{{book.name}}</td>
+      <td>
+        <button  nz-button nzType="primary" nzDanger type="button">Đọc</button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td><button nz-button nzType="primary" nzDanger type="button" routerLink="./create">CREATE+</button></td>
+    </tr>
+  </tbody>
+</nz-table>

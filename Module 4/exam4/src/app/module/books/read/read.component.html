@@ -1,0 +1,17 @@
+
+<nz-table [nzData]="bookList">
+  <thead>
+    <tr>
+      <th colspan="4">Danh sách đã đọc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of bookList; index as idx" >
+      <td>{{idx + 1}}</td>
+      <td>{{book.name}}</td>
+      <td>
+        <button (click)="unreadBook(book.id)"  nz-button nzType="primary" nzDanger type="button">Đọc lại</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

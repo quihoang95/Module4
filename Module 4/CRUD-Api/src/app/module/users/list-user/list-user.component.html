@@ -1,0 +1,26 @@
+
+<nz-table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let users of userList; index as idx">
+      <td>{{ idx + 1 }}</td>
+      <td>{{ users.name }}</td>
+      <td>{{ users.username }}</td>
+      <td>{{ users.email }}</td>
+      <td>
+        <a [routerLink]="['detail',users.id]">{{users.name}} 一</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a (click)="deleteUser(users.id)">Delete 一</a>
+        <a [routerLink]="['edit',users.id]">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
